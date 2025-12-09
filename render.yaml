@@ -2,12 +2,19 @@ services:
   - type: web
     name: laravel-ecommerce
     env: php
+    plan: free
     buildCommand: |
+      # Install PHP dependencies
       composer install --optimize-autoloader --no-dev
+      # Copy render environment file
       cp .env.render .env
+      # Generate application key
       php artisan key:generate --ansi
+      # Install Node dependencies and build assets
       npm install
       npm run build
+      # Run migrations
+      php artisan migrate --force
     startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
     envVars:
       - key: APP_ENV
