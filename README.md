@@ -259,6 +259,26 @@ For production deployment:
 5. Run `php artisan view:cache`
 6. Configure your web server to point to the `public/` directory
 
+## Render Deployment
+
+This Laravel application can be deployed to Render using the PHP environment. Render doesn't have a specific "Laravel" environment, but it supports PHP applications which Laravel is built on.
+
+The `render.yaml` file in this repository contains the configuration needed for Render deployment:
+
+1. Go to [Render Dashboard](https://dashboard.render.com/)
+2. Click "New" and select "Web Service"
+3. Connect your GitHub account if you haven't already
+4. Select your repository (`crazy836/angelica`)
+5. Render will automatically detect the `render.yaml` file and use its configuration
+6. Click "Create Web Service"
+7. Render will begin building and deploying your application
+
+The deployment process will:
+- Clone your repository
+- Run the build commands specified in `render.yaml`
+- Start your application using the start command
+- Make your application available at a Render URL
+
 ## License
 
 This project is open-sourced software licensed under the MIT license.
