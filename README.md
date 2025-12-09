@@ -261,23 +261,28 @@ For production deployment:
 
 ## Render Deployment
 
-This Laravel application can be deployed to Render using the PHP environment. Render doesn't have a specific "Laravel" environment, but it supports PHP applications which Laravel is built on.
+This Laravel application can be deployed to Render using Docker since Render no longer lists PHP as a direct language option.
 
-The `render.yaml` file in this repository contains the configuration needed for Render deployment:
+### Docker Deployment Steps:
 
 1. Go to [Render Dashboard](https://dashboard.render.com/)
 2. Click "New" and select "Web Service"
 3. Connect your GitHub account if you haven't already
 4. Select your repository (`crazy836/angelica`)
-5. Render will automatically detect the `render.yaml` file and use its configuration
-6. Click "Create Web Service"
-7. Render will begin building and deploying your application
+5. Select "Docker" as the Runtime Environment
+6. Set the following configuration:
+   - **Name**: angelica
+   - **Region**: Virginia (US East) or your preferred region
+   - **Branch**: master
+   - **Root Directory**: Leave empty
+7. Render will automatically detect the Dockerfile and use it for deployment
+8. Click "Create Web Service"
+9. Render will begin building and deploying your application using Docker
 
-The deployment process will:
-- Clone your repository
-- Run the build commands specified in `render.yaml`
-- Start your application using the start command
-- Make your application available at a Render URL
+The Docker configuration includes:
+- Installing PHP dependencies with Composer
+- Setting proper file permissions
+- Starting the Laravel development server
 
 ## License
 
