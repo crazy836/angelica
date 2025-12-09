@@ -17,9 +17,16 @@ COPY . .
 # Install Node.js dependencies and build frontend assets
 RUN npm install && npm run build
 
+# Generate application key
+RUN php artisan key:generate --ansi
+
+# Run database migrations
+RUN php artisan migrate --force
+
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage
 RUN chown -R www-data:www-data /var/www/html/bootstrap/cache
+RUN chown -R www-data:www-data /var/www/html/database/database.sqlite
 
 # Expose port
 EXPOSE 80
