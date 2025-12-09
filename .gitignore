@@ -1,0 +1,120 @@
+# Laravel-specific #
+#####################
+/vendor/
+/node_modules/
+/.env
+/.env.backup
+/.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.env.[!-]*
+!.env.example
+
+# IDE Helper #
+##############
+_ide_helper.php
+_ide_helper_models.php
+.phpstorm.meta.php
+
+# SQLite #
+##########
+*.sqlite
+*.sqlite3
+
+# MySQL #
+#########
+*.sql
+
+# Logs #
+########
+*.log
+
+# Temporary Files #
+###################
+/storage/*.key
+/.vagrant
+/public/hot
+/public/storage
+/storage/framework/cache/data/*
+!/storage/framework/cache/data/.gitignore
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+/storage/framework/testing/*
+!/storage/framework/testing/.gitignore
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+/bootstrap/cache/*.php
+!/bootstrap/cache/.gitignore
+
+# Artifacts #
+############
+*.laravel-stubs.php
+
+# Databases #
+############
+*.db
+*.sqlite3
+
+# Uploaded Images #
+##################
+/public/images/*
+
+# Composer #
+############
+composer.phar
+composer.lock
+
+# NPM #
+#######
+package-lock.json
+yarn.lock
+
+# Vite #
+########
+/vite.config.mjs.timestamp-*
+/vite.config.mjs.map
+# Vite generates these files when building for production
+/public/build/
+/resources/assets/build/
+
+# Testing #
+###########
+/.phpunit.cache
+/coverage/
+/coverage-report/
+
+# IDE #
+#######
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*.tmp
+
+# OS Generated #
+################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor #
+##########
+*.sublime-project
+*.sublime-workspace
+
+# Tags #
+########
+tags
+
+# Miscellaneous #
+#################
+*.bak
+*.tmp
+*.temp
+.DS_Store
