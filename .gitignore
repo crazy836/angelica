@@ -64,7 +64,8 @@ _ide_helper_models.php
 # Composer #
 ############
 composer.phar
-composer.lock
+# Note: We're keeping composer.lock for deployment consistency
+# composer.lock
 
 # NPM #
 #######
